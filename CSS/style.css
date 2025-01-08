@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#menuToggle {
+    /* Sert a ne pass afficher l'icone du menu */
+    display: none;
+}
+
+#menuToggle input {
+    width: 50px;
+    height: 50px;
+
+    /* Sert a pouvoir mettre le checkbox a la meme position que l'icone */
+    position: absolute;
+
+    /* sert a passer le curseur de la souris en un doight qui pointe en passant dessus */
+    cursor: pointer;
+
+    /* Sert à le cacher */
+    opacity: 0;
+    
+    /* sert à le passer juste au dessus de l'icone */
+    z-index: 2;
+    
+    margin: 0;
+}
+
+
+#menuToggle img {
+    width: 50px;
+
+    /* sert a ce qu'il reste au dessus lorsque le menu s'ouvre */
+    position: relative;
+
+    /* sert a le mettre juste en dessous du checkbox */
+    z-index: 1;
+}
+
+
+#menu {
+    /* sert a ce qu'il se mette au dessus de tout les élement de la page */
+    position: absolute;
+    
+    max-width: 400px;
+    width: 100vw;
+    height: 100vh;
+
+    /* sert à le mettre en dehors de la page */
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+
+    /* ?? */
+    box-sizing: border-box;
+
+    /* sert a afficher une bar de scroll si il est trop grand pour afficher tout sur l'écrans */
+    overflow-y: auto;
+
+    background: #cececead;
+
+    /* Sert à creer la transition de translation de facon smooth */
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+
+    /* ?? */
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+/* sert à afficher le menu a l'écran lorsque le checkBox est coché */
+#menuToggle input:checked~ul {
+    transform: none;
+}
+
+li {
+    list-style: none;
+    padding: 10px;
+}
+
+#menuToggle a {
+    text-decoration: none;
+    color: #232323;
+    /* sert a faire une animation */
+    transition: all 0.3s;
+    font-size: 1.1em;
+}
+
+a:hover {
+    color: blue;
+    text-shadow: 0 0 10px #4d5886, 2px 2px 2px rgba(4, 33, 252, 0.589);
+    font-size: 1.3em;
+
+}
+
+/* sert à appliquer des propriétés seulment lorsque la page fait maximum 800px de largeur donc plus petit que 800px */
+@media screen and (max-width: 800px) {
+
+    /* sert à ne pas afficher les liens en grand écrans */
+    #menu-largeScreen {
+        display: none;
+    }
+    
+    /* sert à afficher l'icone sur petit écran */
+    #menuToggle {
+        display: block;
+    }
+}
+
+
+#menu-largeScreen ul {
+    display: flex;
+}
+
+#menu-largeScreen a {
+    text-decoration: none;
+    color: #232323;
+    transition: all 0.3s;
+    font-size: 1.1em;
+}
+
+#navbar {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #555555;
+}
+h1 {
+    margin: 0;
+    margin-right: 70px;
+}
