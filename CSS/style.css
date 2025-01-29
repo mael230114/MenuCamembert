@@ -26,6 +26,8 @@ body {
     z-index: 2;
     
     margin: 0;
+    margin-top: -5px;
+
 }
 
 
@@ -37,6 +39,8 @@ body {
 
     /* sert a le mettre juste en dessous du checkbox */
     z-index: 1;
+    margin-top: -5px;
+
 }
 
 
@@ -48,12 +52,12 @@ body {
     width: 100vw;
     height: 100vh;
 
-    /* sert à le mettre en dehors de la page */
+    /* sert à correctement le mettre en dehors de la page */
     margin: -100px 0 0 -50px;
     padding: 50px;
     padding-top: 125px;
 
-    /* ?? */
+    /* Sert à ce que la largeur et la hauteur incluent aussi le padding et le margin, pour que la taille reste fixe */
     box-sizing: border-box;
 
     /* sert a afficher une bar de scroll si il est trop grand pour afficher tout sur l'écrans */
@@ -61,12 +65,13 @@ body {
 
     background: #cececead;
 
-    /* Sert à creer la transition de translation de facon smooth */
+    /* Sert à le replace a l'origin lorsque l'input est coché */
     transform-origin: 0% 0%;
+    /* sert à par défaut le mettre en dehors de l'écran vers la gauche */
     transform: translate(-100%, 0);
 
-    /* ?? */
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    /* Sert a appliquer une transition smooth */
+    transition: transform 0.5s ;
 }
 
 /* sert à afficher le menu a l'écran lorsque le checkBox est coché */
@@ -81,15 +86,23 @@ li {
 
 #menuToggle a {
     text-decoration: none;
-    color: #232323;
+    color: #5e5e5e;
     /* sert a faire une animation */
     transition: all 0.3s;
     font-size: 1.1em;
 }
 
-a:hover {
-    color: blue;
-    text-shadow: 0 0 10px #4d5886, 2px 2px 2px rgba(4, 33, 252, 0.589);
+#menu-largeScreen a {
+    text-decoration: none;
+    color: #f1f1f1;
+    transition: all 0.5s;
+    font-size: 1.1em;
+}
+
+/* Sert a changer la couler lors du survol */
+#menu-largeScreen a:hover, #menuToggle a:hover {
+    color: rgb(255, 0, 242);
+    text-shadow: 0 0 20px #7f4d86, 2px 2px 2px rgb(234, 0, 255);
     font-size: 1.3em;
 
 }
@@ -106,6 +119,10 @@ a:hover {
     #menuToggle {
         display: block;
     }
+
+    h1 {
+        margin-top: 5px;
+    }
 }
 
 
@@ -113,21 +130,17 @@ a:hover {
     display: flex;
 }
 
-#menu-largeScreen a {
-    text-decoration: none;
-    color: #232323;
-    transition: all 0.3s;
-    font-size: 1.1em;
-}
+
 
 #navbar {
     margin: 0;
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    background-color: #555555;
+    background-color: #747272;
 }
 h1 {
     margin: 0;
     margin-right: 70px;
+
 }
